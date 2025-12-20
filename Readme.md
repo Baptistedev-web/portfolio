@@ -183,6 +183,10 @@ The project follows a modular structure to ensure scalability, maintainability, 
 │ └── layout.html
 │
 ├── README.md
+├── .gitignore
+├── robots.txt
+├── sitemap.xml
+│
 └── LICENSE
 
 ---
