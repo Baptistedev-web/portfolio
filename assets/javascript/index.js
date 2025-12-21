@@ -14,17 +14,20 @@ async function initPortfolio() {
         // 2. Injecter le layout
         root.innerHTML = layout;
 
-        // 3. Initialiser les composants AVANT de charger la première section
-        // Les icônes Lucide et le thème ont besoin que le HTML du layout soit présent
+        // 3. Initialiser le thème (doit être fait avant la traduction)
         initTheme(); 
         
+        // 4. Traduire le layout (header, footer, navigation)
         translatePage(); 
+        
+        // 5. Configurer le bouton de langue
         setupLanguageToggle();
 
-        // 4. Charger la section par défaut
+        // 6. Charger la section par défaut
+        // Note: loadSection() appelle automatiquement translatePage() pour le contenu chargé
         await loadSection('presentation', 'app');
         
-        // 5. Activer les écouteurs d'événements sur le menu
+        // 7. Activer les écouteurs d'événements sur le menu
         setupMobileMenu();
         setupNavigation();
 
@@ -77,8 +80,25 @@ function setupNavigation() {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const section = link.getAttribute('data-link');
+        
             loadSection(section, 'app');
+            
+            updateActiveNav(section);
         });
+    });
+}
+
+/**
+ * Met à jour visuellement le lien de navigation actif
+ */
+function updateActiveNav(sectionName) {
+    const links = document.querySelectorAll('[data-link]');
+    links.forEach(link => {
+        if (link.getAttribute('data-link') === sectionName) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
     });
 }
 

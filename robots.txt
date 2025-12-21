@@ -9,6 +9,7 @@ Allow: /assets/images/
 # Empêcher l’indexation de fichiers techniques inutiles
 Disallow: /README.md
 Disallow: /LICENSE
+Disallow: /.gitignore
 
 # Sitemap
 Sitemap: https://baptistedev-web.github.io/portfolio/sitemap.xml

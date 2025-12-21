@@ -1,3 +1,5 @@
+import { translatePage } from './i18n.js';
+
 /**
  * Charge le contenu d'un fichier HTML dans un élément du DOM
  * @param {string} sectionName - Le nom de la section à charger
@@ -14,11 +16,15 @@ export async function loadSection(sectionName, targetId) {
         const html = await response.text();
         target.innerHTML = html;
         
-        // Indispensable : Recréer les icônes Lucide spécifiques à la section injectée
+        // 1. Recréer les icônes Lucide spécifiques à la section injectée
         if (window.lucide) {
             window.lucide.createIcons();
         }
         
+        // 2. IMPORTANT : Appliquer les traductions au nouveau contenu injecté
+        translatePage();
+        
+        // 3. Émettre l'événement pour d'autres scripts qui en ont besoin
         document.dispatchEvent(new CustomEvent('sectionLoaded', { detail: sectionName }));
         
     } catch (error) {

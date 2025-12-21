@@ -40,6 +40,8 @@ Le projet est structuré de manière modulaire afin de faciliter la maintenance,
 │ │
 │ ├── js/
 │ │ ├── core/
+│ │ │ ├── i18n.js
+│ │ │ ├── translation.js
 │ │ │ ├── theme.js
 │ │ │ └── loader.js
 │ │ ├── components/
@@ -52,6 +54,7 @@ Le projet est structuré de manière modulaire afin de faciliter la maintenance,
 │ │ └── index.js
 │ │
 │ └── images/
+│     ├── profil.jpeg
 │     └── logo.png
 │
 ├── html/
@@ -160,6 +163,8 @@ The project follows a modular structure to ensure scalability, maintainability, 
 │ │
 │ ├── js/
 │ │ ├── core/
+│ │ │ ├── i18n.js
+│ │ │ ├── translation.js
 │ │ │ ├── theme.js
 │ │ │ └── loader.js
 │ │ ├── components/
