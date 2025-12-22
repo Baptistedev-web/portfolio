@@ -32,7 +32,6 @@ async function initPortfolio() {
         setupNavigation();
 
     } catch (error) {
-        console.error("Erreur d'initialisation :", error);
         root.innerHTML = `<p style="color:white; padding:2rem;">Erreur critique au chargement : ${error.message}</p>`;
     }
 }

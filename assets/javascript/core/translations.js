@@ -62,6 +62,41 @@ export const translations = {
             view_projects: "Voir mes projets",
             view_skills: "Découvrir mes compétences"
         },
+        contact: {
+            label: "Contact",
+            title: "Travaillons Ensemble",
+            subtitle: "Une question, un projet ou simplement envie d'échanger ? N'hésitez pas à me contacter, je vous répondrai dans les plus brefs délais.",
+            info_title: "Informations",
+            email_label: "Email",
+            phone_label: "Téléphone",
+            location_label: "Localisation",
+            location_value: "Tence, Haute-Loire, Auvergne-Rhône-Alpes, France",
+            social_title: "Suivez-moi",
+            form: {
+                name_label: "Nom complet",
+                name_placeholder: "Jean Dupont",
+                email_label: "Adresse email",
+                email_placeholder: "jean.dupont@exemple.fr",
+                subject_label: "Sujet",
+                subject_placeholder: "Demande de collaboration",
+                message_label: "Message",
+                message_placeholder: "Décrivez votre projet ou votre demande...",
+                submit: "Envoyer le message",
+                validation_error: "Veuillez corriger les erreurs dans le formulaire.",
+                success_message: "✅ Message envoyé avec succès ! Je vous répondrai bientôt.",
+                error_message: "❌ Une erreur est survenue. Veuillez réessayer ou me contacter directement par email.",
+                errors: {
+                    name_required: "Le nom est requis",
+                    name_too_short: "Le nom doit contenir au moins 2 caractères",
+                    email_required: "L'email est requis",
+                    email_invalid: "Format d'email invalide",
+                    subject_required: "Le sujet est requis",
+                    subject_too_short: "Le sujet doit contenir au moins 3 caractères",
+                    message_required: "Le message est requis",
+                    message_too_short: "Le message doit contenir au moins 10 caractères"
+                }
+            }
+        }
     },
     en: {
         nav: {
@@ -125,6 +160,41 @@ export const translations = {
             exp_5_desc: "Maintenance and enhancement of an internal CMS, development of new features based on business needs, performance and UX improvements.",
             view_projects: "View my projects",
             view_skills: "Discover my skills"
-        }        
-    }
+        }, 
+        contact: {
+            label: "Contact",
+            title: "Let's Work Together",
+            subtitle: "Have a question, a project, or just want to chat? Feel free to reach out, I'll get back to you as soon as possible.",
+            info_title: "Information",
+            email_label: "Email",
+            phone_label: "Phone",
+            location_label: "Location",
+            location_value: "Tence, Haute-Loire, Auvergne-Rhône-Alpes, France",
+            social_title: "Follow Me",
+            form: {
+                name_label: "Full Name",
+                name_placeholder: "John Doe",
+                email_label: "Email Address",
+                email_placeholder: "john.doe@example.com",
+                subject_label: "Subject",
+                subject_placeholder: "Collaboration Request",
+                message_label: "Message",
+                message_placeholder: "Describe your project or request...",
+                submit: "Send Message",
+                validation_error: "Please correct the errors in the form.",
+                success_message: "✅ Message sent successfully! I will reply soon.",
+                error_message: "❌ An error occurred. Please try again or contact me directly by email.",
+                errors: {
+                    name_required: "Name is required",
+                    name_too_short: "Name must be at least 2 characters",
+                    email_required: "Email is required",
+                    email_invalid: "Invalid email format",
+                    subject_required: "Subject is required",
+                    subject_too_short: "Subject must be at least 3 characters",
+                    message_required: "Message is required",
+                    message_too_short: "Message must be at least 10 characters"
+                }
+            }
+        }  
+    }      
 };

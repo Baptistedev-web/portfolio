@@ -7,12 +7,13 @@ Importation des fichiers de base
 /*
 Importation des fichiers de components 
 */
-@import url(./components/header.css);
-@import url(./components/footer.css);
+@import url(./components/bouttons.css);
 @import url(./components/cards.css);
 @import url(./components/carousels.css);
 @import url(./components/modals.css);
 @import url(./components/tooltips.css);
+@import url(./components/header.css);
+@import url(./components/footer.css);
 
 /*
 Importation des fichiers de sections 

@@ -3,12 +3,28 @@ import { translations } from './translations.js';
 let currentLang = localStorage.getItem("lang") || "fr";
 
 /**
+ * Récupère la langue actuelle
+ */
+export function getCurrentLanguage() {
+    return currentLang;
+}
+
+/**
+ * Récupère une traduction spécifique par clé
+ * @param {string} key - Clé de traduction (ex: "contact.form.errors.name_required")
+ * @returns {string} - Traduction ou clé si non trouvée
+ */
+export function getTranslation(key) {
+    return getNestedTranslation(translations[currentLang], key) || key;
+}
+
+/**
  * Traduit toute la page actuelle
  */
 export function translatePage() {
     // 1. Traduire les éléments textuels
     document.querySelectorAll("[data-i18n]").forEach(el => {
-        const key = el.dataset.i18n; // ex: "nav.presentation"
+        const key = el.dataset.i18n;
         const translation = getNestedTranslation(translations[currentLang], key);
         
         if (translation) {
@@ -21,7 +37,7 @@ export function translatePage() {
         }
     });
 
-    // 2. Traduire les attributs (comme aria-label ou placeholder)
+    // 2. Traduire les attributs (comme aria-label)
     document.querySelectorAll("[data-i18n-attr]").forEach(el => {
         const [attr, key] = el.dataset.i18nAttr.split(':');
         const translation = getNestedTranslation(translations[currentLang], key);
@@ -30,10 +46,19 @@ export function translatePage() {
         }
     });
 
-    // 3. Mettre à jour la langue du document
+    // 3. Traduire les placeholders
+    document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+        const key = el.dataset.i18nPlaceholder;
+        const translation = getNestedTranslation(translations[currentLang], key);
+        if (translation) {
+            el.setAttribute('placeholder', translation);
+        }
+    });
+
+    // 4. Mettre à jour la langue du document
     document.documentElement.lang = currentLang;
     
-    // 4. Mettre à jour l'icône ou le texte du bouton
+    // 5. Mettre à jour l'icône ou le texte du bouton
     updateLangButton();
 }
 
@@ -67,8 +92,6 @@ function updateLangButton() {
     btn.setAttribute('aria-label', `Passer en ${nextLang}`);
 
     // 2. On s'assure que l'icône est bien présente
-    // On réinjecte la balise <i> pour que Lucide la transforme en SVG propre
-    // Cela permet de garder une cohérence avec le bouton de thème
     btn.innerHTML = `<i data-lucide="languages"></i>`;
 
     // 3. Demander à Lucide de transformer le <i> en <svg>

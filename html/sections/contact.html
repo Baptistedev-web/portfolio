@@ -1,0 +1,156 @@
+<section id="contact-section" class="contact-section">
+    <div class="contact-container">
+        <!-- En-tête de section -->
+        <div class="contact-header">
+            <span class="contact-label" data-i18n="contact.label"></span>
+            <h2 class="contact-title" data-i18n="contact.title"></h2>
+            <p class="contact-subtitle" data-i18n="contact.subtitle"></p>
+        </div>
+
+        <div class="contact-content">
+            <!-- Informations de contact -->
+            <div class="contact-info">
+                <h3 class="info-title" data-i18n="contact.info_title"></h3>
+                <div class="info-cards">
+                    <!-- Email -->
+                    <div class="info-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="info-icon">
+                            <i data-lucide="mail"></i>
+                        </div>
+                        <div class="info-content">
+                            <span class="info-label" data-i18n="contact.email_label"></span>
+                            <a href="mailto:badigonnet@icloud.com" class="info-value">badigonnet@icloud.com</a>
+                        </div>
+                    </div>
+
+                    <!-- Téléphone -->
+                    <div class="info-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="info-icon">
+                            <i data-lucide="phone"></i>
+                        </div>
+                        <div class="info-content">
+                            <span class="info-label" data-i18n="contact.phone_label"></span>
+                            <a href="tel:+33645787529" class="info-value">06 45 78 75 29</a>
+                        </div>
+                    </div>
+
+                    <!-- Localisation -->
+                    <div class="info-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="info-icon">
+                            <i data-lucide="map-pin"></i>
+                        </div>
+                        <div class="info-content">
+                            <span class="info-label" data-i18n="contact.location_label"></span>
+                            <span class="info-value" data-i18n="contact.location_value"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Réseaux sociaux -->
+                <div class="social-links" data-aos="fade-up" data-aos-delay="400">
+                    <h4 class="social-title" data-i18n="contact.social_title"></h4>
+                    <div class="social-grid">
+                        <a href="https://www.linkedin.com/in/baptiste-digonnet/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+                            <i data-lucide="linkedin" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://github.com/Baptistedev-web/" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+                            <i data-lucide="github" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@LeDevGalérien" target="_blank" rel="noopener" class="social-link" aria-label="YouTube">
+                            <i data-lucide="youtube" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@ledevgalerien" target="_blank" rel="noopener" class="social-link" aria-label="TikTok">
+                            <i data-lucide="music-2" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulaire de contact -->
+            <div class="contact-form-wrapper" data-aos="fade-up" data-aos-delay="200">
+                <form method="post" id="contact-form" class="contact-form" novalidate>
+                    <div class="form-group">
+                        <label for="name" class="form-label" data-i18n="contact.form.name_label"></label>
+                        <div class="input-wrapper">
+                            <i data-lucide="user" class="input-icon"></i>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name" 
+                                class="form-input" 
+                                data-i18n-placeholder="contact.form.name_placeholder"
+                                required
+                            >
+                        </div>
+                        <span class="form-error" data-error="name"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label" data-i18n="contact.form.email_label"></label>
+                        <div class="input-wrapper">
+                            <i data-lucide="mail" class="input-icon"></i>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                class="form-input"
+                                data-i18n-placeholder="contact.form.email_placeholder" 
+                                required
+                            >
+                        </div>
+                        <span class="form-error" data-error="email"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject" class="form-label" data-i18n="contact.form.subject_label"></label>
+                        <div class="input-wrapper">
+                            <i data-lucide="tag" class="input-icon"></i>
+                            <input 
+                                type="text" 
+                                id="subject" 
+                                name="subject" 
+                                class="form-input"
+                                data-i18n-placeholder="contact.form.subject_placeholder" 
+                                required
+                            >
+                        </div>
+                        <span class="form-error" data-error="subject"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label" data-i18n="contact.form.message_label"></label>
+                        <div class="input-wrapper">
+                            <i data-lucide="message-square" class="input-icon textarea-icon"></i>
+                            <textarea 
+                                id="message" 
+                                name="message" 
+                                class="form-input form-textarea" 
+                                rows="6"
+                                data-i18n-placeholder="contact.form.message_placeholder"
+                                required
+                            ></textarea>
+                        </div>
+                        <span class="form-error" data-error="message"></span>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <span class="btn-text" data-i18n="contact.form.submit"></span>
+                        <i data-lucide="send" class="btn-icon"></i>
+                        <span class="btn-loader"></span>
+                    </button>
+
+                    <!-- Message de succès/erreur -->
+                    <div class="form-message" id="form-message"></div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Decoration elements -->
+        <div class="contact-decoration">
+            <div class="decoration-circle decoration-circle-1"></div>
+            <div class="decoration-circle decoration-circle-2"></div>
+            <div class="decoration-line decoration-line-1"></div>
+            <div class="decoration-line decoration-line-2"></div>
+        </div>
+    </div>
+</section>

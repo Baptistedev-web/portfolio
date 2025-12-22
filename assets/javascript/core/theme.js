@@ -6,8 +6,7 @@ export function initTheme() {
     const icon = themeToggle.querySelector('i');
     
     // 1. Vérifier s'il y a une préférence enregistrée ou utiliser le thème du système
-    const savedTheme = localStorage.getItem('theme') || 
-                      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
     // 2. Appliquer le thème au démarrage
     applyTheme(savedTheme);

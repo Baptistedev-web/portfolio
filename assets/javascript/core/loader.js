@@ -24,11 +24,59 @@ export async function loadSection(sectionName, targetId) {
         // 2. IMPORTANT : Appliquer les traductions au nouveau contenu injecté
         translatePage();
         
-        // 3. Émettre l'événement pour d'autres scripts qui en ont besoin
+        // 3. Initialiser les scripts spécifiques à la section
+        await initSectionScripts(sectionName);
+        
+        // 4. Émettre l'événement pour d'autres scripts qui en ont besoin
         document.dispatchEvent(new CustomEvent('sectionLoaded', { detail: sectionName }));
         
     } catch (error) {
-        console.error("Erreur de chargement :", error);
         target.innerHTML = `<div class="error">Impossible de charger la section "${sectionName}".</div>`;
+    }
+}
+
+/**
+ * Initialise les scripts spécifiques pour chaque section
+ * @param {string} sectionName - Le nom de la section chargée
+ */
+async function initSectionScripts(sectionName) {
+    switch (sectionName) {
+        case 'contact':
+            try {
+                const { initContactForm } = await import('../sections/contact.js');
+                initContactForm();
+            } catch (error) {
+            }
+            break;
+        
+        case 'projects':
+            try {
+                const { initProjects } = await import('../sections/projects.js');
+                if (typeof initProjects === 'function') {
+                    initProjects();
+                }
+            } catch (error) {
+            }
+            break;
+        
+        case 'technical':
+            try {
+                const { initTechnical } = await import('../sections/technical.js');
+                if (typeof initTechnical === 'function') {
+                    initTechnical();
+                }
+            } catch (error) {
+            }
+            break;
+        
+        case 'presentation':
+            try {
+                const { initPresentation } = await import('../sections/presentation.js');
+                if (typeof initPresentation === 'function') {
+                    initPresentation();
+                }
+            } catch (error) {
+            }
+            break;
     }
 }
