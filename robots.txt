@@ -12,4 +12,4 @@ Disallow: /LICENSE
 Disallow: /.gitignore
 
 # Sitemap
-Sitemap: https://baptistedev-web.github.io/portfolio/sitemap.xml
+Sitemap: https://baptistedev-fullstack.github.io/portfolio/sitemap.xml
