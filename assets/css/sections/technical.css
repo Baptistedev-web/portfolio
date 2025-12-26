@@ -1,0 +1,539 @@
+.technical-section {
+    padding: var(--space-xl) 0;
+    position: relative;
+    overflow: visible;
+    display: block; 
+    opacity: 1;
+    min-height: auto;
+}
+
+/* Normalisation spécifique pour les icônes Tabler */
+.technical-section .icon-tabler {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Force les SVG Tabler à respecter la taille du conteneur parent */
+.technical-section .icon-tabler svg,
+.technical-section svg.icon-tabler,
+.technical-section svg[class*="icon-tabler"] {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Normalisation des icônes Tabler avec balise i (ti ti-*) */
+.technical-section i.ti {
+    font-style: normal;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.category-icon i.ti,
+.tech-logo i.ti {
+    font-size: inherit;
+    line-height: 1;
+}
+
+
+.technical-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(34, 197, 94, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.technical-container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+    box-sizing: border-box;
+}
+
+/* Section Header */
+.section-header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+    position: relative;
+    z-index: 10;
+}
+
+.section-label {
+    display: inline-block;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-main);
+    margin-bottom: var(--space-sm);
+    padding: var(--space-xs) var(--space-md);
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(34, 197, 94, 0.1));
+    border-radius: 100px;
+    border: 1px solid var(--border-color);
+}
+
+.section-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 800;
+    margin-bottom: var(--space-sm);
+    background: linear-gradient(135deg, var(--text-main), var(--text-muted));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-subtitle {
+    font-size: var(--font-size-md);
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* Tech Grid */
+.tech-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    min-height: 100%;
+}
+
+/* Tech Category  */
+.tech-category {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    visibility: visible !important;
+    display: block !important;
+    width: 100%;
+    margin-bottom: var(--space-lg);
+    position: relative;
+    z-index: 10;
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-md);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.category-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(34, 197, 94, 0.1));
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.category-icon svg,
+.category-icon i {
+    width: 24px;
+    height: 24px;
+    color: var(--accent-main);
+}
+
+/* Ajustement des icônes ti Tabler dans les catégories */
+.category-icon i.ti {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+}
+
+/* Ajustement spécifique pour les icônes Tabler dans les catégories */
+.category-icon svg.icon-tabler,
+.category-icon svg[class*="icon-tabler"] {
+    width: 24px !important;
+    height: 24px !important;
+    stroke-width: 2;
+    stroke: currentColor;
+    fill: none;
+}
+
+/* Pour les icônes Tabler remplies */
+.category-icon svg.icon-tabler-filled,
+.category-icon svg[class*="icon-tabler-filled"] {
+    fill: currentColor;
+    stroke: none;
+}
+
+
+.category-title {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+/* Tech Items Grid  */
+.tech-items {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-lg);
+    width: 100%;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Tech Card */
+.tech-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    min-height: 180px;
+    display: flex !important;
+    flex-direction: column;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.tech-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-main), var(--accent-secondary));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-base);
+}
+
+.tech-card:hover::before {
+    transform: scaleX(1);
+}
+
+.tech-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+        0 12px 40px -10px rgba(56, 189, 248, 0.3),
+        0 0 0 1px var(--accent-main);
+    border-color: var(--accent-main);
+}
+
+/* Tech Header */
+.tech-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+}
+
+.tech-logo {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(34, 197, 94, 0.05));
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+    transition: all var(--transition-base);
+}
+
+.tech-card:hover .tech-logo {
+    transform: scale(1.1) rotate(5deg);
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(34, 197, 94, 0.1));
+}
+
+.tech-logo svg,
+.tech-logo i {
+    width: 28px;
+    height: 28px;
+    color: var(--accent-main);
+}
+
+/* Ajustement des icônes ti Tabler dans les logos */
+.tech-logo i.ti {
+    font-size: 28px;
+    width: 28px;
+    height: 28px;
+}
+
+/* Ajustement spécifique pour les icônes Tabler dans les logos */
+.tech-logo svg.icon-tabler,
+.tech-logo svg[class*="icon-tabler"] {
+    width: 28px !important;
+    height: 28px !important;
+    stroke-width: 2;
+    stroke: currentColor;
+    fill: none;
+}
+
+/* Pour les icônes Tabler remplies */
+.tech-logo svg.icon-tabler-filled,
+.tech-logo svg[class*="icon-tabler-filled"] {
+    fill: currentColor;
+    stroke: none;
+}
+
+
+.tech-name {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0;
+    flex: 1;
+}
+
+/* Tech Meta (badges) */
+.tech-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-md);
+}
+
+.tech-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 1px solid;
+}
+
+.tech-badge.web {
+    background: rgba(56, 189, 248, 0.1);
+    color: #38bdf8;
+    border-color: rgba(56, 189, 248, 0.3);
+}
+
+.tech-badge.mobile {
+    background: rgba(168, 85, 247, 0.1);
+    color: #a855f7;
+    border-color: rgba(168, 85, 247, 0.3);
+}
+
+.tech-badge.frontend {
+    background: rgba(34, 197, 94, 0.1);
+    color: #22c55e;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.tech-badge.backend {
+    background: rgba(251, 146, 60, 0.1);
+    color: #fb923c;
+    border-color: rgba(251, 146, 60, 0.3);
+}
+
+.tech-badge.fullstack {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(56, 189, 248, 0.1));
+    color: var(--accent-main);
+    border-color: rgba(56, 189, 248, 0.3);
+}
+
+.tech-badge.tool {
+    background: rgba(148, 163, 184, 0.1);
+    color: var(--text-muted);
+    border-color: var(--border-color);
+}
+
+/* Tech Stats */
+.tech-stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--border-color);
+    margin-top: auto;
+}
+
+.project-count {
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.project-count::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--accent-secondary);
+    border-radius: 50%;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .tech-items {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)) !important;
+        gap: var(--space-md);
+    }
+    
+    .tech-grid {
+        gap: var(--space-xl);
+    }
+}
+
+@media (max-width: 768px) {
+    .technical-section {
+        padding: var(--space-lg) 0;
+    }
+
+    .section-title {
+        font-size: var(--font-size-xl);
+    }
+
+    .section-subtitle {
+        font-size: var(--font-size-sm);
+    }
+
+    .tech-items {
+        grid-template-columns: 1fr !important;
+        gap: var(--space-md);
+    }
+    
+    .tech-grid {
+        gap: var(--space-lg);
+    }
+
+    .category-header {
+        gap: var(--space-sm);
+    }
+
+    .category-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .category-icon svg,
+    .category-icon i {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Ajustement icônes ti Tabler en mobile */
+    .category-icon i.ti {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Ajustement Tabler en mobile */
+    .category-icon svg.icon-tabler,
+    .category-icon svg[class*="icon-tabler"] {
+        width: 20px !important;
+        height: 20px !important;
+    }
+
+    .category-title {
+        font-size: var(--font-size-lg);
+    }
+
+    .tech-card {
+        padding: var(--space-md);
+        min-height: 160px;
+    }
+
+    .tech-card:hover {
+        transform: translateY(-4px);
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-meta {
+        gap: 6px;
+    }
+
+    .tech-badge {
+        padding: 3px 10px;
+        font-size: 0.65rem;
+    }
+
+    .tech-logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .tech-logo svg,
+    .tech-logo i {
+        width: 24px;
+        height: 24px;
+    }
+
+    /* Ajustement icônes ti Tabler en mobile */
+    .tech-logo i.ti {
+        font-size: 24px;
+        width: 24px;
+        height: 24px;
+    }
+
+    /* Ajustement Tabler en mobile */
+    .tech-logo svg.icon-tabler,
+    .tech-logo svg[class*="icon-tabler"] {
+        width: 24px !important;
+        height: 24px !important;
+    }
+
+    .tech-name {
+        font-size: var(--font-size-md);
+    }
+
+    .project-count {
+        font-size: var(--font-size-xs);
+    }
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .tech-card {
+    background: rgba(15, 23, 42, 0.8);
+}
+
+[data-theme="dark"] .tech-card:hover {
+    background: rgba(15, 23, 42, 0.95);
+}
+
+/* Light mode adjustments */
+[data-theme="light"] .tech-card {
+    background: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .tech-card:hover {
+    box-shadow: 
+        0 12px 40px -10px rgba(2, 132, 199, 0.2),
+        0 0 0 1px var(--accent-main);
+}
+
+[data-theme="light"] .section-label {
+    background: linear-gradient(135deg, rgba(2, 132, 199, 0.1), rgba(22, 163, 74, 0.1));
+}

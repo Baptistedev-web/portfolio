@@ -62,6 +62,25 @@ export const translations = {
             view_projects: "Voir mes projets",
             view_skills: "Découvrir mes compétences"
         },
+        technical: {
+            label: "Compétences",
+            title: "Stack Technique",
+            subtitle: "Technologies et outils que je maîtrise pour créer des solutions digitales complètes",
+            filters: {
+                all: "Tout",
+                code: "Langages",
+                frameworks: "Frameworks",
+                databases: "Bases de données",
+                tools: "Outils"
+            },
+            categories: {
+                code: "Langages",
+                frameworks: "Frameworks & Librairies",
+                databases: "Bases de données",
+                tools: "Outils & Environnement"
+            },
+            projects: "projets"
+        },
         contact: {
             label: "Contact",
             title: "Travaillons Ensemble",
@@ -161,6 +180,25 @@ export const translations = {
             view_projects: "View my projects",
             view_skills: "Discover my skills"
         }, 
+        technical: {
+            label: "Skills",
+            title: "Technical Stack",
+            subtitle: "Technologies and tools I master to create complete digital solutions",
+            filters: {
+                all: "All",
+                code: "Languages",
+                frameworks: "Frameworks",
+                databases: "Databases",
+                tools: "Tools"
+            },
+            categories: {
+                code: "Languages",
+                frameworks: "Frameworks & Libraries",
+                databases: "Databases",
+                tools: "Tools & Environment"
+            },
+            projects: "projects"
+        },
         contact: {
             label: "Contact",
             title: "Let's Work Together",
